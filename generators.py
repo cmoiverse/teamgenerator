@@ -16,7 +16,6 @@ def generate_teams(no_of_teams, items, teams):
         items - array of items to arrange into teams
     '''
     '''[] for x in range(no_of_teams)'''
-    random.shuffle(items)
     if(len(items) == 0):
         print("no items")
         return teams
@@ -44,6 +43,7 @@ def generate_teams_random(no_of_teams, items, teams):
         items - array of items to arrange into teams
     '''
     '''[] for x in range(no_of_teams)'''
+    random.shuffle(items)
     if(len(items) == 0):
         print("no items")
         return teams
@@ -51,19 +51,14 @@ def generate_teams_random(no_of_teams, items, teams):
         if(items == []):
             return teams
         if(len(teams) != no_of_teams):
-            item = random.choice(items)
-            teams.append([item])
-            items.remove(item)
+            teams.append([items.pop()])
         else:
             i = no_of_teams
             if i != 0:
                 for team in teams:
                     if(items == []):
                         return teams
-                    item = random.choice(items)
-                    teams.append(item)
-                    items.remove(item)
+                    team.append(items.pop())
                     i = i - 1
     generate_teams_random(no_of_teams, items, teams)
     return teams
-    

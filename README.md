@@ -6,3 +6,5 @@ This program will be used to arrange members of the department
     If you want to have 2 teams based on this you would get [A, B, C] & [D, E, F, G]
     in one scenario and [A, D, F] and [B, C, E, G]
     3 teams e.g. [A, B], [C, D], [E, F, G]
+
+TODO - Make a GUI for the app, web-based probably
