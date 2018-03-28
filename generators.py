@@ -32,33 +32,15 @@ def generate_teams(no_of_teams, items, teams):
                         return teams
                     team.append(items.pop())
                     i = i - 1
-            # else:
-            #     generate_teams(no_of_teams, items, teams)
     generate_teams(no_of_teams, items, teams)
     return teams
 
 def generate_teams_random(no_of_teams, items, teams):
     '''
         this function arranges members into different teams
-        items - array of items to arrange into teams
+        items - array of items to arrange into teams in a randomized order
     '''
     '''[] for x in range(no_of_teams)'''
     random.shuffle(items)
-    if(len(items) == 0):
-        print("no items")
-        return teams
-    for team in range(no_of_teams):
-        if(items == []):
-            return teams
-        if(len(teams) != no_of_teams):
-            teams.append([items.pop()])
-        else:
-            i = no_of_teams
-            if i != 0:
-                for team in teams:
-                    if(items == []):
-                        return teams
-                    team.append(items.pop())
-                    i = i - 1
-    generate_teams_random(no_of_teams, items, teams)
+    generate_teams(no_of_teams, items, teams)
     return teams
