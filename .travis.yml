@@ -3,4 +3,4 @@ python:
   - "3.6"
 cache: pip
 script:
-  - python generators_test.py
+  - python -m unittest discover -p '*_test.py'
