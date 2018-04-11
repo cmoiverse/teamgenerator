@@ -11,7 +11,7 @@ def test_generate_number_of_teams (number):
 # Here's our "unit tests".
 class GeneratorsTests(unittest.TestCase):
     def testSize(self):
-        self.failUnlessEqual(len(test_generate_number_of_teams(3)),3)
+        self.assertEqual(len(test_generate_number_of_teams(3)),3)
 
 def main():
     unittest.main()
