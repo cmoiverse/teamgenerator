@@ -15,17 +15,13 @@ def generate_teams(no_of_teams, items, teams):
         this function arranges members into different teams
         items - array of items to arrange into teams
     '''
-    '''[] for x in range(no_of_teams)'''
-    # len(items) == 0
-    # items == []
-    if(len(items) == 0):
-        print("no items")
-        return teams
-
+    # if(is_empty(items)):
+    #     print("no items")
+    #     return teams
         
     for team in range(no_of_teams):
         # if there are no items don't continue
-        if(items == []):
+        if(is_empty(items)):
             return teams
 
         if(len(teams) != no_of_teams):
@@ -47,7 +43,12 @@ def generate_teams_random(no_of_teams, items, teams):
         this function arranges members into different teams
         items - array of items to arrange into teams in a randomized order
     '''
-    '''[] for x in range(no_of_teams)'''
     random.shuffle(items)
-    generate_teams(no_of_teams, items, teams)
-    return teams
+    shuffled_team = generate_teams(no_of_teams, items, teams)
+    return shuffled_team
+
+def is_empty_using_len(items):
+    return (len(items) == 0)
+
+def is_empty(items):
+    return (items == [])
