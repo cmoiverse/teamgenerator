@@ -16,14 +16,21 @@ def generate_teams(no_of_teams, items, teams):
         items - array of items to arrange into teams
     '''
     '''[] for x in range(no_of_teams)'''
+    # len(items) == 0
+    # items == []
     if(len(items) == 0):
         print("no items")
         return teams
+
+        
     for team in range(no_of_teams):
+        # if there are no items don't continue
         if(items == []):
             return teams
+
         if(len(teams) != no_of_teams):
             teams.append([items.pop()])
+
         else:
             i = no_of_teams
             if i != 0:
