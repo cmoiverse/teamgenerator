@@ -43,6 +43,7 @@ def generate_teams_random(no_of_teams, items, teams):
         this function arranges members into different teams
         items - array of items to arrange into teams in a randomized order
     '''
+    removeSpaces(items)
     random.shuffle(items)
     shuffled_team = generate_teams(no_of_teams, items, teams)
     return shuffled_team
@@ -52,3 +53,8 @@ def is_empty_using_len(items):
 
 def is_empty(items):
     return (items == [])
+
+def removeSpaces(items):
+    for item in items:
+        items.remove(item)
+    return items
