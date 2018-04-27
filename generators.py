@@ -40,7 +40,7 @@ def generate_teams_random(no_of_teams, items, teams):
         items - array of items to arrange into teams in a randomized order
     '''
     validate_items(items)
-    # random.shuffle(items)
+    random.shuffle(items)
     shuffled_teams = generate_teams(no_of_teams, items, teams)
     return shuffled_teams
 
