@@ -16,21 +16,23 @@ def generate_teams(no_of_teams, items, teams):
         items - array of items to arrange into teams
     '''
     for team in range(no_of_teams):
-        # if there are no items don't continue
         if(is_empty(items)):
             return teams
 
+        # collect last item         
         if(len(teams) != no_of_teams):
             teams.append([items.pop()])
 
         else:
             i = no_of_teams
             if i != 0:
+                # add an item to each team
                 for team in teams:
-                    if(items == []):
+                    if(is_empty(items)):
                         return teams
                     team.append(items.pop())
                     i = i - 1
+    # on next iteration another round of items/members will be added to the teams                     
     generate_teams(no_of_teams, items, teams)
     return teams
 
@@ -43,6 +45,8 @@ def generate_teams_random(no_of_teams, items, teams):
     random.shuffle(items)
     shuffled_teams = generate_teams(no_of_teams, items, teams)
     return shuffled_teams
+
+# Helper functions
 
 def is_empty_using_len(items):
     return (len(items) == 0)
