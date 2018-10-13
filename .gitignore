@@ -2,4 +2,11 @@
 *.DS_Store
 __pycache__
 env
+venv
 .vscode
+
+team-gen/
+node_modules/
+npm-debug.log
+bower_components/
+.module-cache
