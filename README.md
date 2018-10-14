@@ -12,8 +12,4 @@ TODO - Make a GUI for the app, web-based probably
 Currently web app just displays team members
 Currently only able to update web app display through manually updating the database
 
-On downloading the app make sure you have django installed then do ->
-$ python manage.py runserver in the terminal
-In the browser type in localhost:8000/team to see results
-
-https://docs.djangoproject.com/en/2.0/intro/tutorial01/
+Run using the run.sh file
