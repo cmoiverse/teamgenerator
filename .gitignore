@@ -1,5 +1,11 @@
 *.pyc
 *.DS_Store
 __pycache__
-env
 .vscode
+
+team-gen/
+/bundle.js
+node_modules/
+npm-debug.log
+bower_components/
+.module-cache
