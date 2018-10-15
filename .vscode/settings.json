@@ -1,0 +1,14 @@
+{
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django"
+    ],
+    "python.unitTest.unittestArgs": [
+        "-v",
+        "-s",
+        ".",
+        "-p",
+        "*test*.py"
+    ],
+    "python.unitTest.unittestEnabled": true,
+    "python.pythonPath": "${workspaceFolder}/team-gen/bin/python"
+}
