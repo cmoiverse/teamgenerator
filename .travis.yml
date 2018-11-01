@@ -13,4 +13,4 @@ deploy:
   domain: cmoi-team-generator.surge.sh
   project: ./build/
 on:
-  branch: react
+  branch: master
