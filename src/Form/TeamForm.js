@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Team.css';
+import './TeamForm.css';
 
-export default class Team extends Component {
+export default class TeamForm extends Component {
   componentDidUpdate() {
     try {
       if(this.props.inputTeam) {

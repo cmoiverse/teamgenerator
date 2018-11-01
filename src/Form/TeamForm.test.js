@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Team from './Team';
+import TeamForm from './TeamForm';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Team />, div);
+  ReactDOM.render(<TeamForm />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Member.css';
+import './MemberForm.css';
 
-export default class Member extends Component {
+export default class MemberForm extends Component {
   componentDidUpdate() {
     try {
       if(this.props.inputMember) {
@@ -13,7 +13,7 @@ export default class Member extends Component {
   }
   render() {
     return (
-      <div className="Member">
+      <div className="MemberForm">
         <div className="header">
           <form onSubmit={this.props.addMember}>
             <input

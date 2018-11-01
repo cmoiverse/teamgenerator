@@ -1,8 +1,8 @@
-.Member {
+.MemberDisplay {
   text-align: center;
 }
 
-.Member-header {
+.MemberDisplay-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;

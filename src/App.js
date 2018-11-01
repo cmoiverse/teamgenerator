@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Team from './Form/Team';
-import Member from './Form/Member';
+import TeamForm from './Form/TeamForm';
+import MemberForm from './Form/MemberForm';
 
 export default class App extends Component {
   constructor() {
@@ -39,14 +39,14 @@ export default class App extends Component {
   }
   handleInputMember = e => {
     const memberText = e.target.value
-    const currentMember = { text: memberText, key: Date.now()}
+    const currentMember = { text: memberText, key: Date.now(), type: 'member'}
     this.setState({
       currentMember,
     })
   }
   handleInputTeam = e => {
     const teamText = e.target.value
-    const currentTeam = { text: teamText, key: Date.now()}
+    const currentTeam = { text: teamText, key: Date.now(), type: 'team'}
     this.setState({
       currentTeam,
     })
@@ -55,13 +55,13 @@ export default class App extends Component {
     return (
       <div className="App">
         <div className="App">
-          <Team
+          <TeamForm
             addTeam={this.addTeam}
             inputTeam={this.inputTeam}
             handleInputTeam={this.handleInputTeam}
             currentTeam={this.state.currentTeam}
           />
-          <Member
+          <MemberForm
             addMember={this.addMember}
             inputMember={this.inputMember}
             handleInputMember={this.handleInputMember}
