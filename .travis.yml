@@ -1,7 +1,16 @@
-language: python
-python:
-  - "3.6"
-cache: pip
-install: pip install -r requirements.txt
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
 script:
-  - python -m unittest discover -p '*_test.py'
+  - npm test
+  - npm run build
+deploy:
+  provider: surge
+  skip_cleanup: true
+  domain: cmoi-team-generator.surge.sh
+  project: ./build/
+on:
+  branch: react
