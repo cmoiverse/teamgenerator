@@ -13,11 +13,11 @@ export default class TeamForm extends Component {
   }
   render() {
     return (
-      <div className="Team">
+      <div className="TeamForm">
         <div className="header">
           <form onSubmit={this.props.addTeam}>
             <input
-              placeholder="Team"
+              placeholder="TeamForm"
               ref={this.props.inputTeam}
               value={this.props.currentTeam.text}
               onChange={this.props.handleInputTeam}

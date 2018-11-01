@@ -17,7 +17,7 @@ export default class MemberForm extends Component {
         <div className="header">
           <form onSubmit={this.props.addMember}>
             <input
-              placeholder="Member"
+              placeholder="MemberForm"
               ref={this.props.inputMember}
               value={this.props.currentMember.text}
               onChange={this.props.handleInputMember}

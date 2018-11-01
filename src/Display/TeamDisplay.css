@@ -1,8 +1,8 @@
-.Team {
+.TeamDisplay {
   text-align: center;
 }
 
-.Team-header {
+.TeamDisplay-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
