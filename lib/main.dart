@@ -15,8 +15,122 @@ class MyApp extends StatelessWidget {
       title: title,
       theme: ThemeData(
         primaryColor: Colors.white,
+        primarySwatch: Colors.blue,
       ),
-      home: RandomWords(),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Team Generator'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Members(
+              title: 'Add or Remove Members',
+            ),
+            Teams(
+              title: 'Teams',
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Members extends StatefulWidget {
+  Members({this.title});
+  final String title;
+  final _suggestions = <WordPair>[];
+  final _biggerFont = const TextStyle(fontSize: 18.0);
+  @override
+  MembersState createState() => MembersState();
+}
+
+class MembersState extends State<Members> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 400,
+      child: _buildSuggestions(),
+    );
+  }
+
+  Widget _buildSuggestions() {
+    return ListView.builder(
+        padding: const EdgeInsets.all(16.0),
+        itemBuilder: /*1*/ (context, i) {
+          if (i.isOdd) return Divider(); /*2*/
+
+          final index = i ~/ 2; /*3*/
+          if (index >= widget._suggestions.length) {
+            widget._suggestions.addAll(generateWordPairs().take(10)); /*4*/
+          }
+          return _buildRow(widget._suggestions[index]);
+        });
+  }
+
+  Widget _buildRow(WordPair pair) {
+    return ListTile(
+      title: Text(
+        pair.asPascalCase,
+        style: widget._biggerFont,
+      ),
+    );
+  }
+}
+
+class Teams extends StatefulWidget {
+  Teams({this.title});
+  final String title;
+  final _suggestions = <WordPair>[];
+  final _biggerFont = const TextStyle(fontSize: 18.0);
+  @override
+  TeamsState createState() => TeamsState();
+}
+
+class TeamsState extends State<Teams> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 400,
+      child: _buildSuggestions(),
+    );
+  }
+
+  Widget _buildSuggestions() {
+    return ListView.builder(
+        padding: const EdgeInsets.all(16.0),
+        itemBuilder: /*1*/ (context, i) {
+          if (i.isOdd) return Divider(); /*2*/
+
+          final index = i ~/ 2; /*3*/
+          if (index >= widget._suggestions.length) {
+            widget._suggestions.addAll(generateWordPairs().take(10)); /*4*/
+          }
+          return _buildRow(widget._suggestions[index]);
+        });
+  }
+
+  Widget _buildRow(WordPair pair) {
+    return ListTile(
+      title: Text(
+        pair.asPascalCase,
+        style: widget._biggerFont,
+      ),
     );
   }
 }
